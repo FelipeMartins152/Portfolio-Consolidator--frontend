@@ -7,7 +7,7 @@ function SignUpForm(){
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPasword, setConfirmPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     return(
         <div className="w-full space-y-5 bg-[#070A12] flex flex-col">
             <div className="flex flex-col gap-1">
@@ -60,7 +60,7 @@ function SignUpForm(){
                 <Input 
                     type="password"
                     placeholder="Repita sua senha"
-                    value={confirmPasword}
+                    value={confirmPassword}
                     onChange={(event) => setConfirmPassword(event.target.value)}
                 />
             </div>

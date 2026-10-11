@@ -7,7 +7,11 @@ import { useNavigate } from "react-router-dom";
 function WelcomePage() {
   const navigate = useNavigate();
 
-  function onloginPageClick(){
+  function onLoginPageClick(){
+    navigate(`login`);
+  }
+
+  function onSignUpPageClick(){
     navigate(`sign-up`);
   }
 
@@ -39,11 +43,11 @@ function WelcomePage() {
           />
         </div>
         <div className="w-full flex flex-col p-6">
-            <Button onClick={onloginPageClick} >Começar gratuitamente</Button>
+            <Button onClick={onSignUpPageClick} >Começar gratuitamente</Button>
         </div>
         <div className="w-full flex justify-center gap-2">
             <p className="font-serif text-sx text-slate-500 text-center">Já tem conta?</p>
-            <TextButton>Entrar</TextButton>
+            <TextButton onClick={onLoginPageClick}>Entrar</TextButton>
         </div>
       </div>
     </div>
