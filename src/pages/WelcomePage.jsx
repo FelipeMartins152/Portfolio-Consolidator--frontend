@@ -1,13 +1,21 @@
 import Logo from "../components/icons/Logo";
-import Button from "../components/welcome/Button";
+import Button from "../components/Button";
 import FeatureItem from "../components/welcome/FeatureItem";
+import TextButton from "../components/TextButton";
+import { useNavigate } from "react-router-dom";
 
-function Welcome() {
+function WelcomePage() {
+  const navigate = useNavigate();
+
+  function onloginPageClick(){
+    navigate(`sign-up`);
+  }
+
   return (
     <div className="w-screen min-h-screen bg-[#070A12] flex justify-center items-center p-6">
       <div className="flex flex-col items-center w-full max-w-md">
         <Logo className="w-16 h-16 mb-4" />
-        <h1 className="text-3xl font-serif text-white text-center mb-2">
+        <h1 className="text-5xl font-serif text-white text-center mb-2">
           ConsolidadorI
         </h1>
         <p className="font-serif text-sm text-slate-400 text-center mb-6">
@@ -31,16 +39,15 @@ function Welcome() {
           />
         </div>
         <div className="w-full flex flex-col p-6">
-            <Button>Começar gratuitamente</Button>
+            <Button onClick={onloginPageClick} >Começar gratuitamente</Button>
         </div>
         <div className="w-full flex justify-center gap-2">
             <p className="font-serif text-sx text-slate-500 text-center">Já tem conta?</p>
-            <p className="font-serif text-sx text-[#60A5FA] text-center">Entrar</p>
+            <TextButton>Entrar</TextButton>
         </div>
-        
       </div>
     </div>
   );
 }
 
-export default Welcome;
+export default WelcomePage;
