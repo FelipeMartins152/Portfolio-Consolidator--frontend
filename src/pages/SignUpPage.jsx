@@ -1,4 +1,3 @@
-import Button from "../components/Button";
 import SignUpForm from "../components/signUp/SignUpForm";
 import ValuePropositionSidebar from "../components/ValuePropositionSidebar";
 import TextButton from "../components/TextButton"
@@ -20,9 +19,6 @@ function SignUpPage() {
                 <div className="w-full lg:w-1/2 p-8 bg-[#070A12] flex flex-col justify-center">
                     <h1 className="text-2xl text-white text-center font-bold mb-6">Cadastre-se</h1>
                     <SignUpForm />
-                    <div className="flex flex-col gap-6 mt-10">
-                        <Button>Cadastrar</Button>
-                    </div>
                     <div className="flex justify-center gap-2 mt-4">
                         <p className="font-serif text-sx text-slate-500 text-center">Já tem conta?</p>
                         <TextButton onClick={onLoginPageClick}>Login</TextButton>

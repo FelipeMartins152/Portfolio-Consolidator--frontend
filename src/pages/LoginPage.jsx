@@ -1,4 +1,3 @@
-import Button from "../components/Button";
 import LoginForm from "../components/login/LoginForm";
 import TextButton from "../components/TextButton";
 import ValuePropositionSidebar from "../components/ValuePropositionSidebar";
@@ -14,9 +13,6 @@ function LoginPage(){
                     <h1 className="text-2xl text-white text-center font-bold mb-2">Bem-vindo de volta</h1>
                     <p className="font-serif text-sm text-center text-slate-500 mb-8">Acesse sua carteira com segurança</p>
                     <LoginForm />
-                    <div className="flex flex-col gap-6 mt-10">
-                        <Button>Entrar</Button>
-                    </div>
                     <div className="flex justify-center gap-2 mt-4">
                         <p className="font-serif text-sx text-slate-500 text-center">Esqueceu a senha?</p>
                         <TextButton>Recuperar</TextButton>
