@@ -1,11 +1,23 @@
 import { ChartColumn, ChartPie, Clock5, LayoutDashboard, MessageSquare, Plus, TrendingUp, User } from "lucide-react";
 import Brand from "../components/Brand"
+import Avatar from "./Avatar";
 
-function Sidebar(){
+function Sidebar({isOpen, onClose}){
     return(
-        <aside className="w-64 h-full bg-[#07101F] border-r border-slate-800 flex flex-col justify-between">
-            <div className="p-6 space-y-6">
-                <div className="pb-4 border-b border-slate-800">
+        <>
+        <button
+            onClick={onClose}
+            className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 ${
+                isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+        />
+
+        <aside className={`fixed top-0 left-0 z-50 w-64 max-w-[85vw] h-full bg-[#07101F] border-r border-slate-800 flex flex-col justify-between
+                    transform transition-transform duration-300 ease-in-out ${
+                    isOpen ? "translate-x-0" : "-translate-x-full"
+                }`}>
+            <div className="p-6 space-y-6 overflow-y-auto">
+                <div className="pb-4 border-b border-slate-800 flex items-center justify-between">
                     <Brand/>
                 </div>
                 
@@ -48,14 +60,13 @@ function Sidebar(){
             </div>
 
             <div className="p-6 border-t border-slate-800 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center text-white font-bold justify-center text-sm shadow-md">
-                    Us
-                </div>
+                <Avatar>Us</Avatar>
                 <div className="flex flex-col">
                     <span className="text-white text-sm font-medium">Usuário</span>
                 </div>
             </div>
         </aside>
+        </>
     );
 }
 
